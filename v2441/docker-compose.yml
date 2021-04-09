@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+  dynamicd:
+    build: .
+    restart: always
+    image: dynamicd:next
+    environment:
+      - RPC_USER=dynamicd
+      - RPC_PASSWORD=changeme4123
+    command:
+      -rpcallowip=0.0.0.0/0
+    ports:
+      - '33300:33300'
+      - '33350:33350'
